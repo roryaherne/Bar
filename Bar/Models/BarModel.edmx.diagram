@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d99e0cb9716c46d69e3f46cd081a766f" Name="Diagram1">
+        <EntityTypeShape EntityType="Bar.Models.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.AspNetRole" Width="1.5" PointX="0.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.AspNetUserClaim" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.AspNetUserLogin" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.AspNetUser" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.InvoicePosition" Width="1.5" PointX="7.5" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.Invoice" Width="1.5" PointX="5.25" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.Order" Width="1.5" PointX="9.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.OrderState" Width="1.5" PointX="5.25" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.Place" Width="1.5" PointX="5.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.Product" Width="1.5" PointX="7.5" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.ProductState" Width="1.5" PointX="5.25" PointY="35.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.ProductType" Width="1.5" PointX="5.25" PointY="38.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.Stock" Width="1.5" PointX="9.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Bar.Models.Unit" Width="1.5" PointX="5.25" PointY="42.625" IsExpanded="true" />
+        <AssociationConnector Association="Bar.Models.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_InvoicePositions_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_InvoicePositions_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Invoices_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Invoices_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Orders_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Orders_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_OrderStates_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_OrderStates_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Places_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Places_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Products_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Products_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_ProductStates_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_ProductStates_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_ProductTypes_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_ProductTypes_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Stocks_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Stocks_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Units_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Units_ModifiedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_InvoicePositions_InvoiceId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_InvoicePositions_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Orders_InvoicePosId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Orders_OrderStateId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Orders_PlaceId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Orders_UnitId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Products_ProductStateId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Products_ProductTypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Products_StockUnitId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.Fk_Stocks_ProductId" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.AspNetUserRoles" ManuallyRouted="false" />
+        <AssociationConnector Association="Bar.Models.ProductServingUnits" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
