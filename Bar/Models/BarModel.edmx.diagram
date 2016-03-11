@@ -54,6 +54,7 @@
         <AssociationConnector Association="Bar.Models.Fk_Stocks_ProductId" ManuallyRouted="false" />
         <AssociationConnector Association="Bar.Models.AspNetUserRoles" ManuallyRouted="false" />
         <AssociationConnector Association="Bar.Models.ProductServingUnits" />
+        <AssociationConnector Association="Bar.Models.Fk_Products_StockUnitId1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

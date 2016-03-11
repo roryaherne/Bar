@@ -128,7 +128,7 @@ CREATE TABLE [dbo].[Products] (
 	Constraint Fk_Products_CreatedBy FOREIGN KEY ([CreatedById]) REFERENCES AspNetUsers(Id),
 	Constraint Fk_Products_ModifiedBy FOREIGN KEY ([ModifiedById]) REFERENCES AspNetUsers(Id),
 
-	Constraint Fk_Products_StockUnitId FOREIGN KEY ([StockUnitId]) REFERENCES Stocks(StockId),
+	Constraint Fk_Products_StockUnitId FOREIGN KEY ([StockUnitId]) REFERENCES Units(UnitId),
 	Constraint Fk_Products_ProductStateId FOREIGN KEY ([ProductStateId]) REFERENCES ProductStates(ProductStateId),
 	Constraint Fk_Products_ProductTypeId FOREIGN KEY ([ProductTypeId]) REFERENCES ProductTypes(ProductTypeId)
 );

@@ -517,11 +517,11 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Fk_Products_StockUnitId">
-          <End Role="Stocks" Type="Self.Stocks" Multiplicity="1" />
+          <End Role="Units" Type="Self.Units" Multiplicity="1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Stocks">
-              <PropertyRef Name="StockId" />
+            <Principal Role="Units">
+              <PropertyRef Name="UnitId" />
             </Principal>
             <Dependent Role="Products">
               <PropertyRef Name="StockUnitId" />
@@ -775,7 +775,7 @@
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="Fk_Products_StockUnitId" Association="Self.Fk_Products_StockUnitId">
-            <End Role="Stocks" EntitySet="Stocks" />
+            <End Role="Units" EntitySet="Units" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
           <AssociationSet Name="fk_ProductServingUnits_Product" Association="Self.fk_ProductServingUnits_Product">
@@ -1023,6 +1023,7 @@
           <NavigationProperty Name="Stock" Relationship="Self.Fk_Products_StockUnitId" FromRole="Products" ToRole="Stocks" />
           <NavigationProperty Name="Stocks" Relationship="Self.Fk_Stocks_ProductId" FromRole="Products" ToRole="Stocks" />
           <NavigationProperty Name="Units" Relationship="Bar.Models.ProductServingUnits" FromRole="Product" ToRole="Unit" />
+          <NavigationProperty Name="Unit" Relationship="Bar.Models.Fk_Products_StockUnitId1" FromRole="Product" ToRole="Unit" />
         </EntityType>
         <EntityType Name="ProductState">
           <Key>
@@ -1091,6 +1092,7 @@
           <NavigationProperty Name="AspNetUser1" Relationship="Self.Fk_Units_ModifiedBy" FromRole="Units" ToRole="AspNetUsers" />
           <NavigationProperty Name="Orders" Relationship="Self.Fk_Orders_UnitId" FromRole="Units" ToRole="Orders" />
           <NavigationProperty Name="Products" Relationship="Bar.Models.ProductServingUnits" FromRole="Unit" ToRole="Product" />
+          <NavigationProperty Name="Products1" Relationship="Bar.Models.Fk_Products_StockUnitId1" FromRole="Unit" ToRole="Product" />
         </EntityType>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
@@ -1638,10 +1640,26 @@
             <End Role="Product" EntitySet="Products" />
             <End Role="Unit" EntitySet="Units" />
           </AssociationSet>
+          <AssociationSet Name="Fk_Products_StockUnitId1" Association="Bar.Models.Fk_Products_StockUnitId1">
+            <End Role="Unit" EntitySet="Units" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="ProductServingUnits">
           <End Type="Bar.Models.Product" Role="Product" Multiplicity="*" />
           <End Type="Bar.Models.Unit" Role="Unit" Multiplicity="*" />
+        </Association>
+        <Association Name="Fk_Products_StockUnitId1">
+          <End Type="Bar.Models.Unit" Role="Unit" Multiplicity="1" />
+          <End Type="Bar.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unit">
+              <PropertyRef Name="UnitId" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="StockUnitId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>

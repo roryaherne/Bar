@@ -19,6 +19,7 @@ namespace Bar.Models
         {
             this.Orders = new HashSet<Order>();
             this.Products = new HashSet<Product>();
+            this.Products1 = new HashSet<Product>();
         }
     
         public int UnitId { get; set; }
@@ -37,5 +38,7 @@ namespace Bar.Models
         public virtual ICollection<Order> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Products1 { get; set; }
     }
 }
