@@ -45,9 +45,9 @@ CREATE TABLE [dbo].[ProductTypes] (
     [Title] NVARCHAR (128) NOT NULL,
     [Description] NVARCHAR (512) NULL,
 	[Margin] FLOAT NOT NULL DEFAULT 0,
-    [DateCreated] DATETIME NOT NULL,
+    [DateCreated] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [CreatedById] NVARCHAR (128) NOT NULL,
-	[DateModified] DATETIME NOT NULL,
+	[DateModified] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [ModifiedById] NVARCHAR (128) NOT NULL,
 	
 	Constraint Pk_ProductTypesId PRIMARY KEY ([ProductTypeId]),
@@ -61,9 +61,9 @@ CREATE TABLE [dbo].[ProductStates] (
     [ProductStateId] INT IDENTITY (1, 1) NOT NULL,
     [Title] NVARCHAR (128) NOT NULL,
     [Description] NVARCHAR (512) NULL,
-    [DateCreated] DATETIME NOT NULL,
+    [DateCreated] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [CreatedById] NVARCHAR (128) NOT NULL,
-	[DateModified] DATETIME NOT NULL,
+	[DateModified] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [ModifiedById] NVARCHAR (128) NOT NULL,
 	
 	Constraint Pk_ProductStatesId PRIMARY KEY ([ProductStateId]),
@@ -77,9 +77,9 @@ CREATE TABLE [dbo].[OrderStates] (
     [OrderStateId] INT IDENTITY (1, 1) NOT NULL,
     [Title] NVARCHAR (128) NOT NULL,
     [Description] NVARCHAR (512) NULL,
-    [DateCreated] DATETIME NOT NULL,
+    [DateCreated] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [CreatedById] NVARCHAR (128) NOT NULL,
-	[DateModified] DATETIME NOT NULL,
+	[DateModified] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [ModifiedById] NVARCHAR (128) NOT NULL,
 	
 	Constraint Pk_OrderStatesId PRIMARY KEY ([OrderStateId]),
@@ -98,7 +98,7 @@ CREATE TABLE [dbo].[Stocks] (
     [ProductId]   INT            NOT NULL,
     [DateCreated]       DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [CreatedById]       NVARCHAR (128) NOT NULL,
-	[DateModified]       DATETIME       NOT NULL,
+	[DateModified]       DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [ModifiedById]       NVARCHAR (128) NOT NULL,
 	
 	Constraint Pk_StocksId PRIMARY KEY ([StockId]),
@@ -119,9 +119,9 @@ CREATE TABLE [dbo].[Products] (
     [StockUnitId] INT NOT NULL,
     [ProductStateId] INT NOT NULL,
     [ProductTypeId] INT NOT NULL,
-	[DateCreated] DATETIME NOT NULL,
+	[DateCreated] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [CreatedById] NVARCHAR (128) NOT NULL,
-	[DateModified] DATETIME NOT NULL,
+	[DateModified] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [ModifiedById] NVARCHAR (128) NOT NULL,
 
 	Constraint Pk_ProductsId PRIMARY KEY ([ProductId]),
@@ -140,9 +140,9 @@ GO
 
 CREATE TABLE [dbo].[Invoices] (
 	[InvoiceId] INT IDENTITY (1, 1) NOT NULL,
-	[DateCreated] DATETIME NOT NULL,
+	[DateCreated] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [CreatedById] NVARCHAR (128) NOT NULL,
-	[DateModified] DATETIME NOT NULL,
+	[DateModified] DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [ModifiedById] NVARCHAR (128) NOT NULL,
 	
 	Constraint Pk_InvoicesId PRIMARY KEY ([InvoiceId]),
@@ -159,9 +159,9 @@ CREATE TABLE [dbo].[InvoicePositions] (
 	[Price]		   FLOAT NOT NULL,
 	[ProductId]        INT NOT NULL,
 	[ProductTitle]      NVARCHAR (128)  NOT NULL,
-	[DateCreated]       DATETIME       NOT NULL,
+	[DateCreated]       DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [CreatedById]       NVARCHAR (128) NOT NULL,
-	[DateModified]       DATETIME       NOT NULL,
+	[DateModified]       DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [ModifiedById]       NVARCHAR (128) NOT NULL,
 	
 	Constraint Pk_InvoicePositionsId PRIMARY KEY ([InvoiceId], [PosNr]),
@@ -186,9 +186,9 @@ CREATE TABLE [dbo].[Orders] (
     [UnitId]       INT            NOT NULL,
     [PlaceId]      INT            NOT NULL,
     [OrderStateId] INT            NOT NULL,
-	[DateCreated]       DATETIME       NOT NULL,
+	[DateCreated]       DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [CreatedById]       NVARCHAR (128) NOT NULL,
-	[DateModified]       DATETIME       NOT NULL,
+	[DateModified]       DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     [ModifiedById]       NVARCHAR (128) NOT NULL,
 	
 	Constraint Pk_OrdersId PRIMARY KEY ([OrderId]),
