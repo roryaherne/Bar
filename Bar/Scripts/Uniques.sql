@@ -13,6 +13,7 @@ ADD UNIQUE (Title)
 
 GO
 
+
 ALTER TABLE ProductTypes
 ADD UNIQUE (Title)
 
